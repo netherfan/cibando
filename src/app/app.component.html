@@ -15,7 +15,7 @@
             <a class="nav-link" href="#"><mat-icon>restaurant</mat-icon> Ricette</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contatti</a>
+            <a class="nav-link" href="#"><mat-icon>account_box</mat-icon> Contatti</a>
           </li>
         </ul>
       </div>
@@ -23,40 +23,13 @@
   </nav>
 </header>
 
-<!-- <img *ngIf="!images" [src]="percorsostd"> -->
-<div>
-<img *ngIf="images.length<2" [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label"/>
-</div>
-<ngb-carousel *ngIf="images.length>1">
-	<ng-template ngbSlide *ngFor="let image of images">
-		<div class="picsum-img-wrapper">
-			<img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
-		</div>
-		<div class="carousel-caption">
-			<h3>{{image.label}}</h3>
-		</div>
-	</ng-template>
-</ngb-carousel>
-
-<div id="contenitore-switch" [ngSwitch]="colore">
-  <div *ngSwitchCase="'green'" style="background-color: '{{colore}}';"> Questo div compare solo se il colore è VERDE</div>
-  <div id="divred" *ngSwitchCase="'red'"> Questo div compare solo se il colore è ROSSO</div>
-  <div *ngSwitchCase="'blue'"> Questo div compare solo se il colore è BLU</div>
-  <div *ngSwitchDefault> Questo div compare solo se il colore non è stato scelto</div>
-</div>
+<app-carousel></app-carousel>
 
 <div id="main_container">
   <div class="container-titolo">
-    <h2>App di esempio in Angular</h2>
-    <p class="paragrafo">Ecco un testo dentro al paragrafo</p>
+    <h2 [ngClass]="evidenziato ? 'testoevidenziato' : '' " (click)="onEvidenziazione()" style="cursor: pointer">Benvenuti in Cibando</h2>
+    <p class="paragrafo" [ngStyle]="{'background-color': 'red'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!</p>
   </div>
-</div>
-
-<div id="contenitore-switch" [ngSwitch]="colore">
-  <div *ngSwitchCase="'green'" style="background-color: '{{colore}}';"> Questo div compare solo se il colore è VERDE</div>
-  <div id="divred" *ngSwitchCase="'red'"> Questo div compare solo se il colore è ROSSO</div>
-  <div *ngSwitchCase="'blue'"> Questo div compare solo se il colore è BLU</div>
-  <div *ngSwitchDefault> Questo div compare solo se il colore non è stato scelto</div>
 </div>
 
 <router-outlet></router-outlet>
