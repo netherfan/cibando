@@ -11,6 +11,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
+import { DetailComponent } from './components/recipes/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HeaderComponent } from './shared/header/header.component';
     CarouselComponent,
     RecipesComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    RecipeCardComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
