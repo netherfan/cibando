@@ -3,8 +3,8 @@
     <div class="card-image" [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}"></div>
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quos voluptatem corporis eos, inventore fugiat aliquam hic. Itaque expedita totam molestias, aut voluptatum nobis quibusdam dicta quas enim, similique vitae.</p>
-      <a class="btn btn-primary" routerLink="/dettaglio/{{recipe._id}}">Visualizza</a>
+      <p class="card-text">{{recipe.description | slice: 0:250}}...</p>
+      <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
     </div>
   </div>
 </div>
