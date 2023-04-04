@@ -5,5 +5,21 @@
     <h2 [ngClass]="evidenziato ? 'testoevidenziato' : '' " (click)="onEvidenziazione()" style="cursor: pointer">Benvenuti in Cibando</h2>
     <p class="paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima!Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium, sint asperiores necessitatibus autem unde temporibus distinctio? Culpa, minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed optio nam dignissimos neque earum facilis quod voluptatum aliquam beatae praesentium</p>
   </div>
-  <app-recipes></app-recipes>
+  <div id="ultimeRicette">
+    <h2>Le ultime ricette</h2>
+    <app-recipe-card [recipes]="ricette"></app-recipe-card>
+  </div>
 </div>
+
+<ng-template [ngIf]="name">
+  <div id="container-utente">
+    <div id="dati-utente">
+      <h2>Grazie <strong>{{name}}</strong> per esserti registrato, ecco i tuoi dati:</h2>
+      <ul>
+        <li>Nome: {{name}}</li>
+        <li>Email: {{email}}</li>
+      </ul>
+      <button class="btn btn-primary btn-lg" (click)="closeModal()">Chiudi</button>
+    </div>
+  </div>
+</ng-template>

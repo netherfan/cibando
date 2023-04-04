@@ -1,0 +1,141 @@
+<!-- <section class="vh-100">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrati</p>
+
+                <form class="mx-1 mx-md-4" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" name="nome" ngModel/>
+                      <label class="form-label" for="form3Example1c" placeholder="scrivi il tuo nome">Il tuo nome</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" name="email" ngModel/>
+                      <label class="form-label" for="form3Example3c" placeholder="email">La tua email</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4c" class="form-control" name="password" ngModel/>
+                      <label class="form-label" for="form3Example4c" >Password</label>
+                      <h5>Il campo password è obbligatorio</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4cd" class="form-control" name="ripeti-password" ngModel/>
+                      <label class="form-label" for="form3Example4cd" >Ripeti password</label>
+                    </div>
+                  </div>
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" name="accetto" ngModel/>
+                    <label class="form-check-label" for="form2Example3">
+                      Dichiaro di accettare i <a href="#!">Termini del servizio</a>
+                    </label>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="button" class="btn btn-primary btn-lg" name="registrati">Registrati</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div id="immagineForm" class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<div class="row contenitore" style="border-radius: 25px;">
+  <div class="col-xl-5 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrati</p>
+
+    <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <mat-icon>person_outline</mat-icon>
+          <input placeholder="nominativo" type="text" id="name" name="name" class="form-control" formControlName="name" />
+          <label class="form-label" for="name">Il tuo nome</label>
+          <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <mat-icon>mail_outline</mat-icon>
+          <input placeholder="email" type="email" id="email" name="email" class="form-control" formControlName="email"/>
+          <label class="form-label" for="email">La tua email</label>
+          <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.get('email').touched">Il campo email è obbligatorio</p>
+          <p class="help is-danger" *ngIf="form.controls['email'].hasError('email') && form.get('email').touched">Il campo email non contiene una email valida</p>
+
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <mat-icon>lock</mat-icon>
+          <input placeholder="password" type="password" id="password" name="password" class="form-control" formControlName="password" />
+          <label class="form-label" for="password">Password</label>
+          <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">Il campo password è obbligatorio</p>
+          <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern')">Il campo password deve contenere almeno 1 carattere speciale, 1 minuscola, 1 maiuscola, 1 numero ed essere lungo da 8 a 16 caratteri</p>
+
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+          <mat-icon>lock</mat-icon>
+          <input type="password" id="ripetiPassword" name="ripetiPassword" class="form-control" formControlName="ripetiPassword"/>
+          <label class="form-label" for="ripetiPassword">Ripeti password</label>
+          <p class="help is-danger" *ngIf="!form.get('ripetiPassword').valid && form.get('ripetiPassword').touched">Il campo ripeti password è obbligatorio</p>
+        </div>
+      </div>
+
+      <div class="form-check d-flex justify-content-center mb-5">
+        <input class="form-check-input me-2" type="checkbox" value="" id="accetto" name="accetto" formControlName="accetto"/>
+        <label class="form-check-label" for="accetto">
+          Dichiaro di accettare i <a href="#!">Termini del servizio</a>
+        </label>
+        <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">Per proseguire è obbligatorio accettare le clausole</p>
+      </div>
+
+      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Registrati</button>
+      </div>
+
+    </form>
+
+  </div>
+  <div class=" col-xl-7  order-1 order-lg-2 colonna-dx">
+
+  </div>
+</div>
