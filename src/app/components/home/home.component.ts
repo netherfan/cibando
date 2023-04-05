@@ -41,10 +41,10 @@ export class HomeComponent implements OnInit{
   }
 
   closeModal() {
-    localStorage.removeItem('name');
-    localStorage.removeItem('email');
-    //or
-    localStorage.clear();
+    // localStorage.removeItem('name');
+    // localStorage.removeItem('email');
+    // //or
+    // localStorage.clear();
 
     this.name = '';
     this.email = '';

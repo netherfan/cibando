@@ -3,6 +3,6 @@
   <div class="msg">
     <h3 *ngIf="titoloRicetta">{{titoloRicetta}}</h3>
   </div>
-  <app-recipe-card [recipes]="ricette" (messaggio)="riceviMessaggio($event)"></app-recipe-card>
+  <app-recipe-card (messaggio)="riceviMessaggio($event)"></app-recipe-card>
 </div>
 

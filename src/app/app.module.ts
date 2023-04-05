@@ -18,6 +18,7 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { FormComponent } from './components/registration/form.component';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
+import { PaginatorModule } from 'primeng/paginator'; //moduli di solito prima di componenti
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DividerModule } from 'primeng/divider';
     FormsModule,
     ReactiveFormsModule,
     PasswordModule,
-    DividerModule
+    DividerModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

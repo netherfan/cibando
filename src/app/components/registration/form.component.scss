@@ -49,16 +49,46 @@ p.help.is-danger {
 }
 @media only screen and (min-width: 0px) and (max-width: 480px){
   .mx-1 {
-      margin-right: 0rem !important;
-     margin-left: 0rem !important;
-}
+    margin-right: 0rem !important;
+    margin-left: 0rem !important;
+  }
+
   .me-3 {
     margin-right: 0rem !important;
   }
+
   .btn.btn-primary {
     background: #8e210b;
     border: 1px solid #8e210b;
-   margin-left: 0px;
+    margin-left: 0px;
     width: 100%;
+  }
+}
+
+.termini {
+  padding: 20px;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.accordion-item {
+  width: 87%;
+  margin-left: 52px;
+}
+
+.modal-header {
+  background-color: $primary-color-1;
+
+  .btn-primary {
+    border-width: 1px!important;
+    background-color: #741907 !important;
+    font-weight: 700;
+    border-color: black!important;
 }
 }
+
+.modal-footer {
+  background-color: $primary-color-1;
+}
+
+
