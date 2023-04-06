@@ -4,6 +4,7 @@ import { CustomValidator } from './customValidator';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -32,9 +33,19 @@ export class FormComponent {
     // console.log(this.form.value);
     const user = {
       name: this.form.value.name,
-      email: this.form.value.email
+      email: this.form.value.email,
+      password: this.form.value.password
     }
     this.userService.datiUtente.next(user);
+    this.userService.createUser(user).pipe(take(1)).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+
     this.router.navigate(['home']);
   }
 

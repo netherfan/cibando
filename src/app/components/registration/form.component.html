@@ -80,7 +80,7 @@
         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
         <div class="form-outline flex-fill mb-0">
           <mat-icon>person_outline</mat-icon>
-          <input placeholder="nominativo" type="text" id="name" name="name" class="form-control" formControlName="name" />
+          <input placeholder="nominativo" type="text" id="name" name="name" class="form-control" formControlName="name" appChangeColor/>
           <label class="form-label" for="name">Il tuo nome</label>
           <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>
         </div>

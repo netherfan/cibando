@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,9 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { FormComponent } from './components/registration/form.component';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
-import { PaginatorModule } from 'primeng/paginator'; //moduli di solito prima di componenti
+import { PaginatorModule } from 'primeng/paginator';
+import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive'; //moduli di solito prima di componenti
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { PaginatorModule } from 'primeng/paginator'; //moduli di solito prima di
     RecipeCardComponent,
     DetailComponent,
     RecipesListComponent,
-    FormComponent
+    FormComponent,
+    CreateRecipeComponent,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { PaginatorModule } from 'primeng/paginator'; //moduli di solito prima di
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    PaginatorModule
+    PaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
