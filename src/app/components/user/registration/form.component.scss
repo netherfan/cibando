@@ -1,9 +1,9 @@
-@import "../../../styles/colors.scss";
+@import "../../../../styles/colors.scss";
 .contenitore {
   border-radius: 25px;
-    width: 75%;
-    margin: 20px auto;
-    border: 2px solid $primary-color-1;
+  width: 75%;
+  margin: 20px auto;
+  border: 2px solid $primary-color-1;
 
     input.ng-invalid.ng-touched {
       border: 1px solid red;

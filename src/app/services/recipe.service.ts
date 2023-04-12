@@ -13,9 +13,13 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  getRecipes(): Observable<Recipe[]> {
-    // return of (RECIPES);
-    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`); //endpoint, alt 96 per backtick || return this.http.get<Recipe[]>(this.apiBaseUrl+ '/')
+  // getRecipes(): Observable<Recipe[]> {
+  //   // return of (RECIPES);
+  //   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`); //endpoint, alt 96 per backtick || return this.http.get<Recipe[]>(this.apiBaseUrl+ '/')
+  // }
+
+  getRecipes() {
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
   }
 
   getRecipe(id: string): Observable<Recipe> { //observable per chiamate asincrone && prima id era number

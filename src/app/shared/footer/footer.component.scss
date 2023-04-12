@@ -1,16 +1,15 @@
-@import "../../../styles/colors.scss";
+@import '../../../styles/colors.scss';
 
 footer {
-
-  background-color: primary-color-1!important;
+  background-color: $primary-color-1!important;
   float: left;
   width: 100%;
   margin-top: 30px;
   padding: 16px;
   height: 200px;
 
-  .icona_cibando {
+  .icona-cibando {
     width: 100px;
-    padding-right: 5px;
+    margin-right: 5px;
   }
 }

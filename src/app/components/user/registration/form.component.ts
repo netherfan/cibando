@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CustomValidator } from './customValidator';
+import { CustomValidator } from '../../user/customValidator';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -13,12 +13,6 @@ import { take } from 'rxjs';
 })
 export class FormComponent {
 
-  constructor(
-    private userService : UserService,
-    private router: Router,
-    private modalService: NgbModal
-    ) {}
-
   form = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -28,6 +22,12 @@ export class FormComponent {
   },
   [CustomValidator.MatchValidator('password', 'ripetiPassword')]
   );
+
+  constructor(
+    private userService : UserService,
+    private router: Router,
+    private modalService: NgbModal
+  ) {}
 
   onSubmit() {
     // console.log(this.form.value);

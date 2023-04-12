@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,12 +17,16 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
-import { FormComponent } from './components/registration/form.component';
+import { FormComponent } from './components/user/registration/form.component';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
-import { ChangeColorDirective } from './directives/change-color.directive'; //moduli di solito prima di componenti
+import { ChangeColorDirective } from './directives/change-color.directive';
+import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './components/user/login/login.component'; //moduli di solito prima di componenti
+import { ToastModule } from 'primeng/toast';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,10 @@ import { ChangeColorDirective } from './directives/change-color.directive'; //mo
     RecipesListComponent,
     FormComponent,
     CreateRecipeComponent,
-    ChangeColorDirective
+    ChangeColorDirective,
+    EsempioCombineComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,9 @@ import { ChangeColorDirective } from './directives/change-color.directive'; //mo
     PasswordModule,
     DividerModule,
     PaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -55,6 +55,10 @@ h2 {
   margin-left: 15px;
 }
 
+.descrizioneRicetta .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+}
 
 
 /* Importing Bootstrap SCSS file. */

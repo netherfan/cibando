@@ -15,10 +15,10 @@
   width: 100%;
 }
 
-#ultimeRicette {
-  margin-top: 40px;
+div#ultimeRicette {
+  margin-top: 50px;
   h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: center;
   }
 }
@@ -29,8 +29,38 @@ div #container-utente {
   height: 100vh;
   position: fixed;
   display: flex;
-}
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  z-index: 10;
 
-div #dati-utente {
+  div #dati-utente {
+    background: white;
+    width: 60%;
+    height: 315px;
+    border: 8px solid $primary-color-1;
+    border-radius: 30px;
+    padding: 16px;
 
+    h2 {
+      font-size: 23px!important;
+      text-align: center;
+    }
+
+    u1 {
+      height: 90px;
+      margin-top: 33px;
+      font-size: 18px;
+
+      li {
+        line-height: 40px;
+      }
+    }
+
+    button.btn.btn-primary.btn-lg {
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
 }

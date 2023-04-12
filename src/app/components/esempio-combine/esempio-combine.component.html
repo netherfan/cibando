@@ -1,0 +1,31 @@
+<h2> Ecco i nostri migliori clienti :</h2>
+
+<ng-template [ngIf]="!(gruppiCombinati$ | async)">
+  <div class="spinner">
+    <img src="../../../assets/images/pizza2.gif">
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="gruppiCombinati$ | async">
+  <div class="elenco">
+    <h3>Clienti:</h3>
+    <ul>
+      <li *ngFor="let cliente of gruppi[0]">
+        {{ cliente.name || cliente }}
+      </li>
+    </ul>
+    <h3>Rivenditori:</h3>
+    <ul>
+      <li *ngFor="let cliente of gruppi[1]">
+        {{ cliente.name || cliente }}
+      </li>
+    </ul>
+    <h3>Marche:</h3>
+    <ul>
+      <li *ngFor="let cliente of gruppi[2]">
+        {{ cliente.name || cliente }}
+      </li>
+    </ul>
+  </div>
+</ng-template>
+

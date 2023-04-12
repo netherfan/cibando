@@ -1,0 +1,61 @@
+div#modale {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #00000080;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+
+  div#contenuto {
+    background: white;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 30px;
+
+    img {
+      height: 150px;
+    }
+
+    h3 {
+      font-size: 23px!important;
+      text-align: center;
+      font-weight: bold!important;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+
+form {
+  width: 60%;
+  margin: auto;
+
+  input {
+    display: block;
+    float: left;
+    margin-bottom: 20px;
+  }
+
+  .check {
+    display: inline-block;
+    width: 6%;
+    float: left;
+    text-align: left;
+  }
+
+  button {
+    margin-top: 30px;
+  }
+}
