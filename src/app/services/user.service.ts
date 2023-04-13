@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, ReplaySubject, Observable } from 'rxjs';
+import { Subject, ReplaySubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -20,5 +20,9 @@ export class UserService {
   getUser(email: string): Observable<any> {
     const emailUtente = {email: email};
     return this.http.post<any>(`${this.apiBaseUrl}/user`, emailUtente);
+  }
+
+  getUserRole(): Observable<any> {
+    return of(this.userRole);
   }
 }

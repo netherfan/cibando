@@ -20,14 +20,14 @@ li.nav-item.user {
   border-radius: 8px;
   padding: 0px 20px;
   color: white;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
 
-    .logged {
-      margin-bottom: 11px;
-      margin-right: 3px;
+  .logged {
+    margin-bottom: 11px;
+    margin-right: 3px;
   }
 
   a.nav-link {

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angu
 import { Observable, take, map } from 'rxjs';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -18,6 +19,8 @@ export class RecipeCardComponent implements OnDestroy {
   page = 1;
   ricettePerPagina = 4;
 
+  ruolo: any;
+
   recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe( //pipe async, no subscribe perchè è lui stesso l'observable
     map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty <= 5)),//plus
     map(res => this.ricette = res)
@@ -26,11 +29,23 @@ export class RecipeCardComponent implements OnDestroy {
 
   ricette: Recipe[];
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService, private userService: UserService) {}
 
   // ngOnInit(): void {
   //   this.prendiRicette();
   // }
+  // ngOnInit(): void {
+  //   if(JSON.parse(localStorage.getItem('user')) != null){
+  //     this.userService.getUserRole.subscribe({
+  //       next: (res) => {
+  //         this.ruolo = res;
+  //       },
+  //       error: (err) => {
+  //         console.log(err)
+  //       }
+  //     })
+  //   }
+  //  }
 
   ngOnDestroy(): void {
     console.log('utente uscito dal componente');
