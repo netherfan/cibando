@@ -15,10 +15,20 @@
             <a class="nav-link" routerLink="ricette"><mat-icon>restaurant</mat-icon> Ricette</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="crea"><mat-icon>restaurant</mat-icon> Crea ricetta</a>
+            <a class="nav-link" routerLink="ricette/crea"><mat-icon>restaurant</mat-icon> Crea ricetta</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><mat-icon> mail_outline</mat-icon> Contatti</a>
+          </li>
+          <!-- <div id="container-search">
+            <input type="text" name="cerca" [(NgModel)]="testo" class="form-control cerca">
+            <button (click)="cerca()"
+          </div> -->
+          <li>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <input class="form-control" type="text" name="title" placeholder="Cerca ricetta.." formControlName="title" ngModel>
+              <button button type="submit"><mat-icon class="search-icon">search</mat-icon></button>
+            </form>
           </li>
 
           <li class="nav-item user" *ngIf="!authService.isLogged()">

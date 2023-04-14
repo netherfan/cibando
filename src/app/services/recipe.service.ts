@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class RecipeService {
 
   apiBaseUrl = 'api/recipes';
+  recipeName =  new ReplaySubject();
 
   constructor(private http: HttpClient) { }
 
@@ -30,5 +31,9 @@ export class RecipeService {
 
   postRecipe(new_recipe: any): Observable<any> {
     return this.http.post<any>(`${this.apiBaseUrl}/`, new_recipe);
+  }
+
+  findRecipe(text: string): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/cerca/${text}`);
   }
 }

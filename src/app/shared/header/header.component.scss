@@ -34,3 +34,15 @@ li.nav-item.user {
     display: inline-block;
   }
 }
+
+input[type=text] {
+  float:left;
+  padding: 6px;
+  margin-top: 8px;
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.search-icon {
+  float:right;
+}
